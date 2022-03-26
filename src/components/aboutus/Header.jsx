@@ -1,13 +1,19 @@
-import React from 'react'
+import React , {useState} from 'react'
 import styled from 'styled-components'
 import Icons from '../../components/aboutus/Icons'
 
 const Logo = styled.h2`
         padding: 0px 50px;
+        @media screen and (max-width: 768px) {
+        padding: 0px 0px;
+        margin-left:10px ;
+  }
 `
 
 const Container = styled.div`
 /* border-bottom: 2px solid black; */
+justify-content: unset;
+    flex-wrap:unset ;
     padding: 20px 60px;
     display: flex ;
     align-items: center ;
@@ -15,7 +21,9 @@ const Container = styled.div`
    color: ${({theme}) => theme.text};
    z-index: 1;
    @media screen and (max-width: 768px) {
-        padding: 0px 0px;
+        padding: 6px 8px;
+        justify-content: space-between;
+        flex-wrap: wrap;
   }
 `
 const Wrapper = styled.div`
@@ -25,6 +33,8 @@ const Wrapper = styled.div`
     width: 100%;
     @media screen and (max-width: 768px) {
     display:block ;
+    padding: 0px;
+    
   }
 `
 const ListItem = styled.div`
@@ -46,13 +56,38 @@ const HeaderInput = styled.input`
         outline: none;
         border-bottom: 2px solid ${({theme})=> theme.text};
     }
+    @media screen and (max-width: 768px) {
+    
+  padding:0px ;
+  margin: 0px;
+  }
+`
+const RightSideHeader = styled.div`
+     @media screen and (max-width: 768px) {
+    
+    padding:0px ;
+   margin: 0px 0px;
+    }
 `
 
+
 const Header = ({activeTheme , toggleTheme, theme}) => {
+    const  isDesktop = window.screen.width >= 720
+    const [menu, setMenu] = useState(true)
+    const show = (menu && !isDesktop) ? "" : "show" ;
     // const [darkMode, setDarkMode] = useState(false);
+    console.log({isDesktop});
   return (
     <Container >
         <Logo className='me-2'>Upsilon</Logo>
+        
+       {!isDesktop && <button  onClick={()=>setMenu((prevState)=>!prevState)} class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><svg width="31" height="21" viewBox="0 0 31 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2 2H29M2 10.5H29M2 19H29" stroke="white" stroke-width="4" stroke-miterlimit="10" stroke-linecap="round"/>
+</svg>
+</span>
+    </button>}
+  <div className={"collapse navbar-collapse " + show} >
         <Wrapper>
             <div>
                 
@@ -61,17 +96,20 @@ const Header = ({activeTheme , toggleTheme, theme}) => {
                 </Icons>
                 <HeaderInput type="text" placeholder='Search a course' />
             </div>
-            <div className='d-flex'>
+            <RightSideHeader className='d-flex'>
                 <ListItem>About us</ListItem>
                 <ListItem>Signin</ListItem>
                 <ListItem>
-<div class="form-check form-switch">
-  <input class="form-check-input" type="checkbox" onClick={toggleTheme} role="switch" id="flexSwitchCheckDefault"/>
-  <label class="form-check-label" for="flexSwitchCheckDefault">{activeTheme}</label>
+<div className="form-check form-switch">
+  <input className="form-check-input" type="checkbox" onClick={toggleTheme} role="switch" id="flexSwitchCheckDefault"/>
+  <label className="form-check-label" for="flexSwitchCheckDefault">{activeTheme}</label>
 </div>
+
 </ListItem>
-            </div>
+            </RightSideHeader>
         </Wrapper>
+        </div>
+      
     </Container>
   )
 }
