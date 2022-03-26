@@ -14,12 +14,18 @@ const Container = styled.div`
     background-color: ${({theme}) => theme.header};
    color: ${({theme}) => theme.text};
    z-index: 1;
+   @media screen and (max-width: 768px) {
+        padding: 0px 0px;
+  }
 `
 const Wrapper = styled.div`
     display: flex ;
     align-items: center ;
     justify-content: space-between;
     width: 100%;
+    @media screen and (max-width: 768px) {
+    display:block ;
+  }
 `
 const ListItem = styled.div`
     list-style: none;
@@ -49,7 +55,7 @@ const Header = ({activeTheme , toggleTheme, theme}) => {
         <Logo className='me-2'>Upsilon</Logo>
         <Wrapper>
             <div>
-                {/* <img src={activeTheme === 'light' ? './assets/search.png' : './assets/searchlight.png'} height='20' alt="" /> */}
+                
                 <Icons iconSize={20} >
                 <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path>
                 </Icons>

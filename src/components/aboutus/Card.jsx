@@ -13,6 +13,11 @@ const Heading = styled.div`
 const CardContainer = styled.div`
     display: flex;
     justify-content: center;
+    @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap:30px ;
+    }
+  }
 
 `
 const CardBox = styled.div`
@@ -25,6 +30,9 @@ const CardBox = styled.div`
     padding: 40px 50px;
     text-align:center;
     background-color: ${({theme}) => theme.card};
+    @media screen and (max-width: 768px) {
+        margin:0px auto;
+  }
 `
 const ImageContainer = styled.div`
     border-radius: 50%;
@@ -76,7 +84,7 @@ const Card = () => {
         </Heading>
         <CardContainer>
             {data.map((ele)=>{
-                return <CardBox>
+                return <CardBox key={ele.id}>
                     <ImageContainer background={ele.img}></ImageContainer>
                     <PersonPositionContainer><PersonPositionbox>{ele.positiom}</PersonPositionbox></PersonPositionContainer>
                     <div><PersonNameBox>{ele.name}</PersonNameBox></div>

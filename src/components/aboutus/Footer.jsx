@@ -6,12 +6,18 @@ const Container = styled.div`
     padding: 40px 100px;
     background-color: ${({theme}) => theme.footer};
     color: ${({theme}) => theme.text};
+    @media screen and (max-width: 768px) {
+        padding: 0px 0px;
+  }
 `
 const Wrapper = styled.div`
     display: flex;
     justify-content: space-around ;
     align-items:center ;
     list-style: none;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+  }
 `
 const ListItem = styled.div`
         li{
@@ -36,12 +42,38 @@ const FooterInput = styled.input`
 `
 const SocialIconsContainer = styled.div`
     padding-top: 10px;
+    @media screen and (max-width: 768px) {
+     padding: 20px 0px;
+  }
 `
 const FooterInputIcon = styled.img`
 cursor: pointer;
 position: absolute;
    top: 10;
   right: 20px;
+ 
+`
+const LogoHeading = styled.h2`
+      @media screen and (max-width: 768px) {
+        font-size: 50px;
+        
+  }
+`
+const List = styled.div`
+
+    gap: 120px;
+  display: flex;
+      @media screen and (max-width: 768px) {
+      display: flex;
+      gap: 20px;
+      margin: 10px;
+  }
+`
+const List2 = styled.div`
+     @media screen and (max-width: 768px) {
+     font-size: larger;
+     font-weight: 500;
+  }
 `
 
 const Footer = () => {
@@ -49,9 +81,9 @@ const Footer = () => {
     <Container>
         <Wrapper>
             <div>
-                <div>
-                   <h2>Upsilon</h2> 
-                </div>
+             
+                   <LogoHeading>Upsilon</LogoHeading> 
+               
                 <div>
                     <p className='text-secondary'>Top instructors from around the world <br /> teach millions of students.</p>
                 </div>
@@ -63,7 +95,8 @@ const Footer = () => {
                     </MailingBox>
                 </div>
             </div>
-            <ListItem>
+           <List>
+           <ListItem>
                 <li>Teach Here</li>
                 <li>Be part</li>
                 <li>Business</li>
@@ -77,13 +110,16 @@ const Footer = () => {
                 <li>Register</li>
                 <li>Term & Policy</li>
             </ListItem>
+           </List>
             <div>
-                <ListItem>
+               <List2>
+               <ListItem>
                     <li>Reach us at</li>
                     <li>+91 8888888888</li>
                     <li>upsilon175@gmail.com</li>
                     <li>Follow us on :</li>
                 </ListItem>
+               </List2>
                 <SocialIconsContainer>
                     <SocialIcon />
                 </SocialIconsContainer>
