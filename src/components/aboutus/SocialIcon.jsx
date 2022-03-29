@@ -32,7 +32,7 @@ const SocialIcon = () => {
   return (
     <Container>
         {data.map((ele)=>{
-            return <CardContainer key={ele.id} color={ele.bg}><Card  background={ele.img} ></Card></CardContainer>
+            return <CardContainer key={ele.id} color={ele.bg}><a href={ele.link}><Card  background={ele.img} ></Card></a></CardContainer>
         })}
     </Container>
   )
