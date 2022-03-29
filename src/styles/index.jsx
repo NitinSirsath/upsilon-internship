@@ -18,8 +18,8 @@ export const Light = {
 
 export const Dark = {
     bg : '#212121',
-    header: '#373544',
-    footer: '#373544',
+    header: '#212121',
+    footer: '#212121',
     text: 'white',
     card: '#3C3E42'
 }
