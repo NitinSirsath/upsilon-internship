@@ -30,6 +30,12 @@ const CardBox = styled.div`
     padding: 40px 50px;
     text-align:center;
     background-color: ${({theme}) => theme.card};
+    transition: 0.4s;
+    &:hover{
+        /* padding: 45px 55px; */
+        transition: 0.4s;
+        background-color: #292727;
+    }
     @media screen and (max-width: 768px) {
         margin:0px auto;
   }
