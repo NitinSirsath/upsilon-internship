@@ -62,8 +62,8 @@ const HeaderInput = styled.input`
   margin: 0px;
   }
 `
-const RightSideHeader = styled.div`
-     @media screen and (max-width: 768px) {
+const RightSideHeader = styled.div`,
+a screen and (max-width: 768px) {
     
     padding:0px ;
    margin: 0px 0px;

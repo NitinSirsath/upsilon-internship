@@ -92,10 +92,10 @@ const Card = () => {
             {data.map((ele)=>{
                 return <CardBox key={ele.id}>
                     <ImageContainer background={ele.img}></ImageContainer>
-                    <PersonPositionContainer><PersonPositionbox>{ele.positiom}</PersonPositionbox></PersonPositionContainer>
+                    <PersonPositionContainer><PersonPositionbox>{ele.position}</PersonPositionbox></PersonPositionContainer>
                     <div><PersonNameBox>{ele.name}</PersonNameBox></div>
                     <LinkedinContainer className=''>
-                        <CardSocialIcon src="./assets/icons/linkedin.png" alt="" />
+                        <a href="https://www.linkedin.com/in/rohit-bhagat-2833801b1/" target='_blank' rel="noopener noreferrer"><CardSocialIcon src="./assets/icons/linkedin.png"  alt="" /></a>
                     </LinkedinContainer>
                 </CardBox>
             })}

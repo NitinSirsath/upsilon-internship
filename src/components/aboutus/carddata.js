@@ -4,13 +4,13 @@ const data = [
     {
         id : 1,
         img: './assets/person-img.png',
-        positiom : 'Marketing Manager',
+        position : 'Marketing Manager',
         name: 'Rohit Bhagat'  
     },
     {
         id : 2,
         img: './assets/person-img.png',
-        positiom : 'Marketing Manager',
+        position : 'Marketing Manager',
         name: 'Rohit Bhagat'  
     },
 ]
