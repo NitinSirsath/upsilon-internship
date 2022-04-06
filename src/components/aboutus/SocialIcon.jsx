@@ -18,6 +18,9 @@ const Card = styled.div`
     height: 20px;
     width: 20px;
     padding: 5px;
+    &:hover{
+        padding: 8px;
+    }
 `
 const CardContainer = styled.div`
 border-radius: 3px;
@@ -26,6 +29,7 @@ place-items:center ;
 background-color: ${props => props.color};
     height: 30px;
     width: 30px;
+   
 `
 
 const SocialIcon = () => {

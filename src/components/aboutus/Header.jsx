@@ -40,6 +40,10 @@ const Wrapper = styled.div`
 const ListItem = styled.div`
     list-style: none;
     margin:  0px 10px;
+    cursor: pointer;
+        &:hover{
+          color: lightgray;
+        }
 `
 const HeaderInput = styled.input`
     margin: 0px 10px;
@@ -75,6 +79,8 @@ const Header = ({activeTheme , toggleTheme, theme}) => {
     const  isDesktop = window.screen.width >= 720
     const [menu, setMenu] = useState(true)
     const show = (menu && !isDesktop) ? "" : "show" ;
+    const [searchInput, setSearchInput] = useState('')
+    console.log({searchInput});
     // const [darkMode, setDarkMode] = useState(false);
     console.log({isDesktop});
   return (
@@ -94,7 +100,7 @@ const Header = ({activeTheme , toggleTheme, theme}) => {
                 <Icons iconSize={20} >
                 <path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path>
                 </Icons>
-                <HeaderInput type="text" placeholder='Search a course' />
+                <HeaderInput type="text" value={searchInput} onChange={(e) => setSearchInput(e.target.value)} placeholder='Search a course' />
             </div>
             <RightSideHeader className='d-flex'>
                 <ListItem>About us</ListItem>
